@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import ListGroup from "react-bootstrap/ListGroup";
 
 export default class CareerPath extends Component {
   render() {
-    return <li>{this.props.careerPath.title}</li>;
+    return (
+      <ListGroup.Item variant="light">
+        {this.props.careerPath.title}
+      </ListGroup.Item>
+    );
   }
 }
