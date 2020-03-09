@@ -2,8 +2,15 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { render } from "react-dom";
-import CareerPathContainer from "./containers/CareerPathContainer";
+
+//react-bootstrap
 import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+import CareerPathContainer from "./containers/CareerPathContainer";
+import CourseContainer from "./containers/CourseContainer";
 
 function App() {
   return (
@@ -19,7 +26,16 @@ function App() {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand>Career Path</Navbar.Brand>
       </Navbar>
-      <CareerPathContainer />
+      <Container>
+        <Row>
+          <Col>
+            <CareerPathContainer />
+          </Col>
+          <Col md={9}>
+            <CourseContainer />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
