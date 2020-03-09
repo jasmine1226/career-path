@@ -1,12 +1,6 @@
 const CareerPathsReducer = (
   state = {
-    careerPaths: [
-      { title: "Software Developer" },
-      { title: "Solution Archtect" },
-      { title: "UI/UX Designer" },
-      { title: "Product Manager" },
-      { title: "Technical Program Manager" }
-    ],
+    careerPaths: [],
     courses: [
       {
         title: "AWS re:Invent 2019 - Keynote with Andy Jassy",
@@ -39,12 +33,30 @@ const CareerPathsReducer = (
         url: "https://www.youtube.com/watch?v=Z9QbYZh1YXY&t=12s",
         length: 12
       }
-    ]
+    ],
+    loading: false
   },
   action
 ) => {
   switch (action.type) {
+    case "START_ADDING_CAREER_PATHS_REQUEST":
+      console.log("START_ADDING_CAREER_PATHS_REQUEST");
+      return {
+        ...state,
+        careerPaths: [...state.careerPaths],
+        courses: [...state.courses],
+        loading: true
+      };
+    case "ADD_CAREER_PATHS":
+      console.log("ADD_CAREER_PATHS");
+      return {
+        ...state,
+        careerPaths: action.careerPaths,
+        courses: [...state.courses],
+        loading: false
+      };
     default:
+      console.log("fall to default");
       return state;
   }
 };
