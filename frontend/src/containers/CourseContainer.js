@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Courses from "../components/courses/Courses";
 import { connect } from "react-redux";
+import { fetchCourses } from "../actions/courseActions";
 
 class CourseContainer extends Component {
   render() {
@@ -15,4 +16,8 @@ class CourseContainer extends Component {
 
 const mapStateToProps = state => ({ courses: state.courses });
 
-export default connect(mapStateToProps)(CourseContainer);
+const mapDispatchToProps = dispatch => ({
+  fetchCourses: dispatch(fetchCourses())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CourseContainer);

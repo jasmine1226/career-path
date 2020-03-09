@@ -9,7 +9,6 @@ class CareerPathContainer extends Component {
   }
 
   render() {
-    //console.log(this.props.careerPaths);
     return (
       <div>
         <CareerPaths careerPaths={this.props.careerPaths} />
