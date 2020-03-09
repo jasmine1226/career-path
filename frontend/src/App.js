@@ -26,7 +26,10 @@ function App() {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand>Career Path</Navbar.Brand>
       </Navbar>
-      <Container>
+      <Container class="pb-md-3">
+        <Row>
+          <Col id="active-user-display">Welcome back, User</Col>
+        </Row>
         <Row>
           <Col>
             <CareerPathContainer />

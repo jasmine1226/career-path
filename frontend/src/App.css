@@ -20,3 +20,9 @@
 .list-group-item:hover {
   color: #ff9900 !important;
 }
+
+#active-user-display {
+  font-size: 12px;
+  text-align: right;
+  color: #ff9900;
+}
