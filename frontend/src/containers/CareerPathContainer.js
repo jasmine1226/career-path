@@ -6,7 +6,12 @@ export default class CareerPathContainer extends Component {
     return (
       <div id="CareerPathContainer">
         Career Path Container
-        <CareerPaths />
+        <CareerPaths
+          careerPaths={[
+            { id: 0, title: "Sample-SDE" },
+            { id: 1, title: "Sample-TPM" }
+          ]}
+        />
       </div>
     );
   }

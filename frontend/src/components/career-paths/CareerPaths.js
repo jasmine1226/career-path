@@ -7,7 +7,9 @@ export default class CareerPaths extends Component {
       <div>
         <h3>Career Paths</h3>
         <ul>
-          <CareerPath careerPath={{ id: 0, title: "Sample-SDE" }} />
+          {this.props.careerPaths.map(careerPath => (
+            <CareerPath careerPath={careerPath} />
+          ))}
         </ul>
       </div>
     );
