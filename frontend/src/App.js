@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { render } from "react-dom";
+import { connect } from "react-redux";
 
 //react-bootstrap
 import Navbar from "react-bootstrap/Navbar";

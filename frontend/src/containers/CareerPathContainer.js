@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import CareerPaths from "../components/career-paths/CareerPaths";
+import { connect } from "react-redux";
 
-export default class CareerPathContainer extends Component {
+class CareerPathContainer extends Component {
   render() {
     return (
       <div>
-        <CareerPaths
-          careerPaths={[
-            { id: 0, title: "Sample-SDE" },
-            { id: 1, title: "Sample-TPM" }
-          ]}
-        />
+        <CareerPaths careerPaths={this.props.careerPaths} />
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  careerPaths: state.careerPaths
+});
+
+export default connect(mapStateToProps)(CareerPathContainer);
