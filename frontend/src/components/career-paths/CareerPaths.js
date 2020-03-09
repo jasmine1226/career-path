@@ -5,7 +5,7 @@ export default class CareerPaths extends Component {
   render() {
     return (
       <div>
-        <h3>Career Paths</h3>
+        <h4>Career Paths</h4>
         <ul>
           {this.props.careerPaths.map(careerPath => (
             <CareerPath careerPath={careerPath} />
