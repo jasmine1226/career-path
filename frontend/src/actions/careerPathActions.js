@@ -8,6 +8,7 @@ export function fetchCareerPaths() {
       })
       .then(careerPaths => {
         return dispatch({ type: "ADD_CAREER_PATHS", careerPaths: careerPaths });
-      });
+      })
+      .catch(error => console.log(error));
   };
 }

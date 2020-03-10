@@ -19,7 +19,7 @@ module Api::V1
       @course = Course.new(course_params)
 
       if @course.save
-        render json: @course, status: :created, location: @course
+        render json: @course, status: :created
       else
         render json: @course.errors, status: :unprocessable_entity
       end
@@ -47,7 +47,7 @@ module Api::V1
 
       # Only allow a trusted parameter "white list" through.
       def course_params
-        params.require(:course).permit(:title, :url, :integer)
+        params.require(:course).permit(:title, :url, :length)
       end
   end
 end

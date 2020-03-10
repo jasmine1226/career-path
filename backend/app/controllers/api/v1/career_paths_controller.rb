@@ -19,7 +19,7 @@ module Api::V1
       @career_path = CareerPath.new(career_path_params)
 
       if @career_path.save
-        render json: @career_path, status: :created, location: @career_path
+        render json: @career_path, status: :created
       else
         render json: @career_path.errors, status: :unprocessable_entity
       end

@@ -15,7 +15,7 @@ export default class Courses extends Component {
           </thead>
           <tbody>
             {this.props.courses.map(course => {
-              return <Course course={course} />;
+              return <Course key={course.id} course={course} />;
             })}
           </tbody>
         </Table>

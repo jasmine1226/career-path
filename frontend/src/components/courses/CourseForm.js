@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -9,7 +8,7 @@ class CourseForm extends Component {
   state = {
     title: "",
     url: "",
-    length: 0
+    length: ""
   };
 
   handleOnChange = event => {
@@ -21,7 +20,17 @@ class CourseForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+    const course = {
+      title: this.state.title,
+      url: this.state.url,
+      length: this.state.length
+    };
+    this.props.createCourse(course);
+    this.setState({
+      title: "",
+      url: "",
+      length: ""
+    });
   };
 
   render() {
@@ -49,6 +58,7 @@ class CourseForm extends Component {
             <Form.Control
               type="text"
               id="url"
+              value={this.state.url}
               onChange={event => this.handleOnChange(event)}
             />
           </Col>
@@ -61,6 +71,7 @@ class CourseForm extends Component {
             <Form.Control
               type="number"
               id="length"
+              value={this.state.length}
               onChange={event => this.handleOnChange(event)}
             />
           </Col>
@@ -73,4 +84,4 @@ class CourseForm extends Component {
   }
 }
 
-export default connect()(CourseForm);
+export default CourseForm;

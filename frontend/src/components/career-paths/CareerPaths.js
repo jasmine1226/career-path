@@ -9,7 +9,7 @@ export default class CareerPaths extends Component {
         <h4>Career Paths</h4>
         <ListGroup>
           {this.props.careerPaths.map(careerPath => (
-            <CareerPath careerPath={careerPath} />
+            <CareerPath key={careerPath.id} careerPath={careerPath} />
           ))}
         </ListGroup>
       </div>

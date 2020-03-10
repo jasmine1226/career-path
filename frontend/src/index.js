@@ -7,9 +7,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import logger from "redux-logger";
 import CareerPathsReducer from "./reducers/CareerPathsReducer";
 
-const store = createStore(CareerPathsReducer, applyMiddleware(thunk));
+const store = createStore(CareerPathsReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   <Provider store={store}>

@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 2020_03_09_041014) do
 
   create_table "career_path_courses", force: :cascade do |t|
-    t.integer "CareerPath_id"
-    t.integer "Course_id"
+    t.integer "career_path_id"
+    t.integer "course_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["CareerPath_id"], name: "index_career_path_courses_on_CareerPath_id"
-    t.index ["Course_id"], name: "index_career_path_courses_on_Course_id"
+    t.index ["career_path_id"], name: "index_career_path_courses_on_career_path_id"
+    t.index ["course_id"], name: "index_career_path_courses_on_course_id"
   end
 
   create_table "career_paths", force: :cascade do |t|
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_041014) do
   create_table "courses", force: :cascade do |t|
     t.string "title"
     t.string "url"
-    t.integer "length"
+    t.string "length"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

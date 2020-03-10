@@ -35,6 +35,29 @@ const CareerPathsReducer = (
         courses: action.courses,
         loading: false
       };
+    case "START_CREATE_COURSE_REQUEST":
+      return {
+        ...state,
+        careerPaths: [...state.careerPaths],
+        courses: [...state.courses],
+        loading: true
+      };
+    case "ADD_COURSE":
+      return {
+        ...state,
+        careerPaths: [...state.careerPaths],
+        courses: [...state.courses, action.course],
+        loading: false
+      };
+    case "CREATE_COURSE":
+      console.log(action.course);
+      console.log(action.course.length);
+      return {
+        ...state,
+        careerPaths: [...state.careerPaths],
+        courses: [...state.courses],
+        loading: false
+      };
     default:
       return state;
   }
