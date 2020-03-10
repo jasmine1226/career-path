@@ -8,7 +8,7 @@ class CourseForm extends Component {
   state = {
     title: "",
     url: "",
-    length: ""
+    length: 0
   };
 
   handleOnChange = event => {
@@ -29,7 +29,7 @@ class CourseForm extends Component {
     this.setState({
       title: "",
       url: "",
-      length: ""
+      length: 0
     });
   };
 

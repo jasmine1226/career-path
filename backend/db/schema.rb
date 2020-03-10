@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_041014) do
   create_table "courses", force: :cascade do |t|
     t.string "title"
     t.string "url"
-    t.string "length"
+    t.integer "length"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -18,7 +18,6 @@ const addCourse = course => {
 };
 
 export const createCourse = course => {
-  console.log(course);
   return dispatch => {
     dispatch({ type: "START_CREATE_COURSE_REQUEST" });
     return fetch("http://localhost:3000/api/v1/courses", {
@@ -30,8 +29,6 @@ export const createCourse = course => {
     })
       .then(res => res.json())
       .then(course => {
-        console.log("after JSON");
-        console.log(course);
         dispatch(addCourse(course));
       })
       .catch(error => console.log(error));
