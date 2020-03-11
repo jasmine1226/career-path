@@ -1,25 +1,18 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
+import { Link, Route } from "react-router-dom";
+import Col from "react-bootstrap/Col";
 
 const CareerPath = props => {
   const careerPath = props.careerPath.attributes;
-  return <ListGroup.Item variant="light">{careerPath.title}</ListGroup.Item>;
+  const id = props.careerPath.id;
+  return (
+    <Col>
+      <ListGroup.Item key={id} variant="light">
+        <Link to={`/career_paths/${id}`}>{careerPath.title}</Link>
+      </ListGroup.Item>
+    </Col>
+  );
 };
 
 export default CareerPath;
-
-{
-  /* <Container>
-        <Row>
-          <Col id="active-user-display">Welcome back, User</Col>
-        </Row>
-        <Row>
-          <Col>
-            <CareerPathContainer />
-          </Col>
-          <Col md={9}>
-            <CourseContainer />
-          </Col>
-        </Row>
-      </Container> */
-}

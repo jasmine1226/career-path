@@ -12,7 +12,7 @@ module Api::V1
     # GET /career_paths/1
     def show
       options = {
-        include: [:title, :url, :length]
+        include: [:courses]
       }
       render json: CareerPathSerializer.new(@career_path, options)
     end

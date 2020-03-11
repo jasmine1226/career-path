@@ -43,15 +43,21 @@ const CareerPathsReducer = (
         loading: true
       };
     case "ADD_COURSE":
+      const course = {
+        id: action.course.id,
+        attributes: {
+          title: action.course.title,
+          url: action.course.url,
+          length: action.course.length
+        }
+      };
       return {
         ...state,
         careerPaths: [...state.careerPaths],
-        courses: [...state.courses, action.course],
+        courses: [...state.courses, course],
         loading: false
       };
     case "CREATE_COURSE":
-      console.log(action.course);
-      console.log(action.course.length);
       return {
         ...state,
         careerPaths: [...state.careerPaths],
