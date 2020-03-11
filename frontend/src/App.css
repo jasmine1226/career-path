@@ -56,3 +56,12 @@
   background-color: #fff !important;
   border-top: none !important;
 }
+
+.list-group-item a {
+  color: #ff9900;
+}
+
+.list-group-item a:hover {
+  color: #fcba03;
+  text-decoration: none;
+}
