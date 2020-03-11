@@ -8,7 +8,7 @@
 
 CareerPath.create([
   {title: "Software Developer"},
-  {title: "Solution Archtect"},
+  {title: "Solution Architect"},
   {title: "UI/UX Designer"},
   {title: "Product Manager"},
   {title: "Technical Program Manager"}
@@ -42,13 +42,14 @@ Course.create([
 ])
 
 CareerPathCourse.create([
+  {career_path_id: 1, course_id: 4},
+  {career_path_id: 1, course_id: 6},
   {career_path_id: 1, course_id: 1},
-  {career_path_id: 1, course_id: 2},
-  {career_path_id: 1, course_id: 3},
   {career_path_id: 2, course_id: 2},
   {career_path_id: 2, course_id: 4},
   {career_path_id: 3, course_id: 5},
-  {career_path_id: 3, course_id: 1},
+  {career_path_id: 3, course_id: 6},
   {career_path_id: 4, course_id: 3},
-  {career_path_id: 5, course_id: 2}
+  {career_path_id: 5, course_id: 6},
+  {career_path_id: 5, course_id: 4}
 ])
