@@ -10,12 +10,12 @@ const Course = props => {
       <Card.Img variant="top" src="https://placeimg.com/286/180/tech" />
       <Card.Body>
         <Card.Title>{course.title}</Card.Title>
+      </Card.Body>
+      <Card.Footer>
         <Card.Text>
           {course.length} minute
           {course.length === 1 ? null : "s"}
         </Card.Text>
-      </Card.Body>
-      <Card.Footer>
         <Button href={course.url} variant="primary">
           View
         </Button>
