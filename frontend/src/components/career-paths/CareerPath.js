@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
-export default class CareerPath extends Component {
-  render() {
-    const careerPath = this.props.careerPath.attributes;
-    return <ListGroup.Item variant="light">{careerPath.title}</ListGroup.Item>;
-  }
-}
+const CareerPath = props => {
+  const careerPath = props.careerPath.attributes;
+  return <ListGroup.Item variant="light">{careerPath.title}</ListGroup.Item>;
+};
+
+export default CareerPath;
 
 {
   /* <Container>
