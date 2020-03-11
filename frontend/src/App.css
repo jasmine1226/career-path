@@ -34,3 +34,13 @@
 .nav-link:hover {
   color: #fcba03;
 }
+
+.btn-primary {
+  background-color: #ff9900 !important;
+  border: #ff9900 !important;
+}
+
+.btn-primary:hover {
+  background-color: #fcba03 !important;
+  border: #fcba03 !important;
+}

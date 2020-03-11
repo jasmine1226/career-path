@@ -12,7 +12,6 @@ class CourseContainer extends Component {
   render() {
     return (
       <div>
-        <h4>Course Container</h4>
         <CourseForm createCourse={this.props.createCourse} />
         <Courses courses={this.props.courses} />
       </div>
