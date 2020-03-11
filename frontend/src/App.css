@@ -44,3 +44,15 @@
   background-color: #fcba03 !important;
   border: #fcba03 !important;
 }
+
+.card {
+  width: 20rem !important;
+  min-width: 20rem !important;
+  max-width: 20rem !important;
+  margin: 4rem;
+}
+
+.card-footer {
+  background-color: #fff !important;
+  border-top: none !important;
+}

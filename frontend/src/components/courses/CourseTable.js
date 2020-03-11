@@ -13,7 +13,17 @@ const Courses = props => (
       </thead>
       <tbody>
         {props.courses.map(course => {
-          return <Course key={course.id} course={course} />;
+          return (
+            <tr>
+              <td>
+                <a href={course.attributes.url}>{course.attributes.title}</a>
+              </td>
+              <td>
+                {course.attributes.length} minute
+                {course.attributes.length === 1 ? null : "s"}
+              </td>
+            </tr>
+          );
         })}
       </tbody>
     </Table>

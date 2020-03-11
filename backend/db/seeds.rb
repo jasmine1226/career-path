@@ -40,3 +40,15 @@ Course.create([
    length: 12
   }
 ])
+
+CareerPathCourse.create([
+  {career_path_id: 1, course_id: 1},
+  {career_path_id: 1, course_id: 2},
+  {career_path_id: 1, course_id: 3},
+  {career_path_id: 2, course_id: 2},
+  {career_path_id: 2, course_id: 4},
+  {career_path_id: 3, course_id: 5},
+  {career_path_id: 3, course_id: 1},
+  {career_path_id: 4, course_id: 3},
+  {career_path_id: 5, course_id: 2}
+])

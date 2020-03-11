@@ -1,23 +1,16 @@
 import React from "react";
 import Course from "./Course";
-import Table from "react-bootstrap/Table";
+
+import CardDeck from "react-bootstrap/CardDeck";
 
 const Courses = props => (
-  <div>
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Length</th>
-        </tr>
-      </thead>
-      <tbody>
-        {props.courses.map(course => {
-          return <Course key={course.id} course={course} />;
-        })}
-      </tbody>
-    </Table>
-  </div>
+  <CardDeck style={{ display: "flex", flexDirection: "row" }}>
+    <div class="row justify-content-center">
+      {props.courses.map(course => {
+        return <Course key={course.id} course={course} />;
+      })}
+    </div>
+  </CardDeck>
 );
 
 export default Courses;

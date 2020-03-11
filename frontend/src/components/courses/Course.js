@@ -1,15 +1,26 @@
 import React from "react";
 
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+
 const Course = props => {
   const course = props.course.attributes;
-  console.log(course);
   return (
-    <tr>
-      <td>
-        <a href={course.url}>{course.title}</a>
-      </td>
-      <td>{course.length}</td>
-    </tr>
+    <Card style={{ flex: 1 }}>
+      <Card.Img variant="top" src="https://via.placeholder.com/286x180" />
+      <Card.Body>
+        <Card.Title>{course.title}</Card.Title>
+        <Card.Text>
+          {course.length} minute
+          {course.length === 1 ? null : "s"}
+        </Card.Text>
+      </Card.Body>
+      <Card.Footer>
+        <Button href={course.url} variant="primary">
+          View
+        </Button>
+      </Card.Footer>
+    </Card>
   );
 };
 
