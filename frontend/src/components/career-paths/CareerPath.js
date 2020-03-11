@@ -11,3 +11,19 @@ export default class CareerPath extends Component {
     );
   }
 }
+
+{
+  /* <Container>
+        <Row>
+          <Col id="active-user-display">Welcome back, User</Col>
+        </Row>
+        <Row>
+          <Col>
+            <CareerPathContainer />
+          </Col>
+          <Col md={9}>
+            <CourseContainer />
+          </Col>
+        </Row>
+      </Container> */
+}

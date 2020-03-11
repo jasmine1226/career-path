@@ -26,3 +26,11 @@
   text-align: right;
   color: #ff9900;
 }
+
+.nav-link {
+  color: #ff9900;
+}
+
+.nav-link:hover {
+  color: #fcba03;
+}

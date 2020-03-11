@@ -8,14 +8,17 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import CareerPathsReducer from "./reducers/CareerPathsReducer";
 
 const store = createStore(CareerPathsReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Router>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Router>,
   document.getElementById("root")
 );
 
