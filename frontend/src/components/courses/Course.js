@@ -7,7 +7,7 @@ const Course = props => {
   const course = props.course.attributes;
   return (
     <Card style={{ flex: 1 }}>
-      <Card.Img variant="top" src="https://via.placeholder.com/286x180" />
+      <Card.Img variant="top" src="https://placeimg.com/286/180/tech" />
       <Card.Body>
         <Card.Title>{course.title}</Card.Title>
         <Card.Text>
