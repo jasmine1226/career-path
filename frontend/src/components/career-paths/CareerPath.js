@@ -4,15 +4,7 @@ import { Link } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 
 const CareerPath = props => {
-  const careerPath = props.careerPath.attributes;
-  const id = props.careerPath.id;
-  return (
-    <Col>
-      <ListGroup.Item key={id} variant="light">
-        <Link to={`/career_paths/${id}`}>{careerPath.title}</Link>
-      </ListGroup.Item>
-    </Col>
-  );
+  return <h4>Career Path for {props.careerPath.attributes.title}s</h4>;
 };
 
 export default CareerPath;

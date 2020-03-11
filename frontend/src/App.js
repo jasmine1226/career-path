@@ -31,7 +31,7 @@ function App() {
       <Container>
         <Col id="active-user-display">Welcome back, User</Col>
         <Route exact path="/" component={Home} />
-        <Route exact path="/career_paths" component={CareerPathContainer} />
+        <Route path="/career_paths" component={CareerPathContainer} />
         <Route exact path="/courses" component={CourseContainer} />
       </Container>
     </div>
