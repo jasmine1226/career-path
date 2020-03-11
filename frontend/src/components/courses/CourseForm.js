@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -36,7 +36,7 @@ class CourseForm extends Component {
   };
 
   render() {
-    const open = this.state.open;
+    const { open } = this.state;
     return (
       <>
         <Button

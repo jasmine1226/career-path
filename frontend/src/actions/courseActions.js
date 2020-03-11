@@ -4,7 +4,7 @@ export const fetchCourses = () => {
     fetch("http://localhost:3000/api/v1/courses")
       .then(response => response.json())
       .then(courses => {
-        return dispatch({ type: "ADD_COURSES", courses: courses });
+        return dispatch({ type: "ADD_COURSES", courses: courses.data });
       })
       .catch(error => console.log(error));
   };

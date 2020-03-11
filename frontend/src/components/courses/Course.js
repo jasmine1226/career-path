@@ -2,12 +2,13 @@ import React, { Component } from "react";
 
 export default class Course extends Component {
   render() {
+    const course = this.props.course.attributes;
     return (
       <tr>
         <td>
-          <a href={this.props.course.url}>{this.props.course.title}</a>
+          <a href={course.url}>{course.title}</a>
         </td>
-        <td>{this.props.course.length}</td>
+        <td>{course.length}</td>
       </tr>
     );
   }

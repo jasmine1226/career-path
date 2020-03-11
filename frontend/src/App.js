@@ -1,13 +1,12 @@
 import React from "react";
 import "./App.css";
 import { render } from "react-dom";
-import { Route, NavLink } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 //react-bootstrap
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import CareerPathContainer from "./containers/CareerPathContainer";
@@ -18,14 +17,14 @@ function App() {
   return (
     <div className="App">
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand>Career Path</Navbar.Brand>
-        <Nav.Link exact href="/" exact>
+        <Navbar.Brand>AWS Learning Hub</Navbar.Brand>
+        <Nav.Link exact href="/" exact="true">
           Home
         </Nav.Link>
-        <Nav.Link exact href="/career_paths" exact>
+        <Nav.Link exact href="/career_paths" exact="true">
           Career Paths
         </Nav.Link>
-        <Nav.Link exact href="/courses" exact>
+        <Nav.Link exact href="/courses" exact="true">
           Courses
         </Nav.Link>
       </Navbar>

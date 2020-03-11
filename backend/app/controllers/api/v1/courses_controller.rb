@@ -6,12 +6,12 @@ module Api::V1
     def index
       @courses = Course.all
 
-      render json: @courses
+      render json: CourseSerializer.new(@courses)
     end
 
     # GET /courses/1
     def show
-      render json: @course
+      render json: CourseSerializer.new(@course)
     end
 
     # POST /courses

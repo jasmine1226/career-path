@@ -4,11 +4,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 export default class CareerPath extends Component {
   render() {
-    return (
-      <ListGroup.Item variant="light" key={this.props.careerPath.id}>
-        {this.props.careerPath.title}
-      </ListGroup.Item>
-    );
+    const careerPath = this.props.careerPath.attributes;
+    return <ListGroup.Item variant="light">{careerPath.title}</ListGroup.Item>;
   }
 }
 

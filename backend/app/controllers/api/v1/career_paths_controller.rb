@@ -6,12 +6,15 @@ module Api::V1
     def index
       @career_paths = CareerPath.all
 
-      render json: @career_paths
+      render json: CareerPathSerializer.new(@career_paths)
     end
 
     # GET /career_paths/1
     def show
-      render json: @career_path
+      options = {
+        include: [:title, :url, :length]
+      }
+      render json: CareerPathSerializer.new(@career_path, options)
     end
 
     # POST /career_paths

@@ -7,7 +7,10 @@ export function fetchCareerPaths() {
         return response.json();
       })
       .then(careerPaths => {
-        return dispatch({ type: "ADD_CAREER_PATHS", careerPaths: careerPaths });
+        return dispatch({
+          type: "ADD_CAREER_PATHS",
+          careerPaths: careerPaths.data
+        });
       })
       .catch(error => console.log(error));
   };
