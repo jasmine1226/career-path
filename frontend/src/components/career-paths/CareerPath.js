@@ -1,8 +1,5 @@
 import React from "react";
 import CourseTable from "../courses/CourseTable";
-import ListGroup from "react-bootstrap/ListGroup";
-import { Link } from "react-router-dom";
-import Col from "react-bootstrap/Col";
 
 const CareerPath = props => {
   return (

@@ -2,7 +2,6 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 
 const Courses = props => {
-  console.log(props.courses);
   return (
     <div>
       <Table striped bordered hover>

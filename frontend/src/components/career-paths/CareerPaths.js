@@ -1,7 +1,6 @@
 import React from "react";
 import CareerPath from "./CareerPath";
 import ListGroup from "react-bootstrap/ListGroup";
-import CourseTable from "../courses/CourseTable";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Route, Switch, Link } from "react-router-dom";
@@ -36,7 +35,9 @@ const CareerPaths = props => {
                 <Route
                   path={`/career_paths/${careerPath.id}`}
                   exact={true}
-                  component={() => <CareerPath careerPath={careerPath} />}
+                  component={() => (
+                    <CareerPath key={careerPath.id} careerPath={careerPath} />
+                  )}
                 />
               );
             })}
