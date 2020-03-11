@@ -5,6 +5,7 @@ import CourseTable from "../courses/CourseTable";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Route, Switch, Link } from "react-router-dom";
+import LearningPathGuide from "./LearningPathGuide";
 
 const CareerPaths = props => {
   const careerPaths = props.careerPaths;
@@ -29,6 +30,7 @@ const CareerPaths = props => {
         </Col>
         <Col md="9">
           <Switch>
+            <Route exact path="/career_paths" component={LearningPathGuide} />
             {careerPaths.map(careerPath => {
               return (
                 <Route

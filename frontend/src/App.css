@@ -57,11 +57,11 @@
   border-top: none !important;
 }
 
-a {
+.list-group-item a {
   color: #ff9900;
 }
 
-a:hover {
+.list-group-item a:hover {
   color: #fcba03;
   text-decoration: none;
 }

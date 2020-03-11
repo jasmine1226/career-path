@@ -20,7 +20,7 @@ const Courses = props => {
                   <a href={course.url}>{course.title}</a>
                 </td>
                 <td>
-                  {course.length} minute
+                  {course.length} min
                   {course.length === 1 ? null : "s"}
                 </td>
               </tr>
