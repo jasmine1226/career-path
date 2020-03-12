@@ -6,12 +6,14 @@ module Api::V1
     def index
       @courses = Course.all
 
-      render json: CourseSerializer.new(@courses)
+      render json: @courses.to_json(:include => {
+        :career_paths => {:only => [:title]}})
     end
 
     # GET /courses/1
     def show
-      render json: CourseSerializer.new(@course)
+      render json: @course.to_json(:include => {
+        :career_paths => {:only => [:title]}})
     end
 
     # POST /courses

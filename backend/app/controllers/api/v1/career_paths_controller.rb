@@ -13,7 +13,8 @@ module Api::V1
     # GET /career_paths/1
     def show
     
-      render json: CareerPathSerializer.new(@career_path)
+      render json: CareerPathSerializer.to_json(:include => {
+        :courses => {:only => [:title, :url, :length]}})
     end
 
     # POST /career_paths

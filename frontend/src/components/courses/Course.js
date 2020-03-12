@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 const Course = props => {
-  const course = props.course.attributes;
+  const course = props.course;
   return (
     <Card style={{ flex: 1 }}>
       <Card.Img variant="top" src="https://placeimg.com/286/180/tech" />
