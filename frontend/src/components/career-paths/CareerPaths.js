@@ -7,15 +7,14 @@ import { Route, Switch, Link } from "react-router-dom";
 import LearningPathGuide from "./LearningPathGuide";
 
 const CareerPaths = props => {
-  const careerPaths = props.careerPaths;
-
   return (
     <div>
       <Row>
         <Col>
+          <p>Career Paths component</p>
           <ListGroup>
-            {careerPaths.map(careerPath => {
-              const title = careerPath.attributes.title;
+            {props.careerPaths.map(careerPath => {
+              const title = careerPath.title;
               const id = careerPath.id;
               return (
                 <Col>
@@ -30,14 +29,12 @@ const CareerPaths = props => {
         <Col md="9">
           <Switch>
             <Route exact path="/career_paths" component={LearningPathGuide} />
-            {careerPaths.map(careerPath => {
+            {props.careerPaths.map(careerPath => {
               return (
                 <Route
                   path={`/career_paths/${careerPath.id}`}
                   exact={true}
-                  component={() => (
-                    <CareerPath key={careerPath.id} careerPath={careerPath} />
-                  )}
+                  component={() => <CareerPath careerPath={careerPath} />}
                 />
               );
             })}

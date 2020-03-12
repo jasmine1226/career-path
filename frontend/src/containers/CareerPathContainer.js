@@ -18,8 +18,7 @@ class CareerPathContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  careerPaths: state.careerPaths,
-  loading: state.loading
+  careerPaths: state.careerPaths
 });
 
 const mapDispatchToProps = dispatch => {
