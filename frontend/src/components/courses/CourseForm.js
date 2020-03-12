@@ -43,6 +43,7 @@ class CourseForm extends Component {
           onClick={() => this.setState({ open: !open })}
           aria-controls="example-collapse-text"
           aria-expanded={open}
+          style={{ marginBottom: 1 + "em" }}
         >
           {open ? "Collapse" : "Add a New Course"}
         </Button>
