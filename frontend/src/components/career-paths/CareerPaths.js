@@ -1,10 +1,12 @@
 import React from "react";
 import CareerPath from "./CareerPath";
 import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Route, Switch, Link } from "react-router-dom";
 import LearningPathGuide from "./LearningPathGuide";
+import CareerPathForm from "./CareerPathForm";
 
 const CareerPaths = props => {
   return (
@@ -12,15 +14,18 @@ const CareerPaths = props => {
       <Row>
         <Col>
           <ListGroup>
+            <ListGroup.Item>
+              <Link to={"/career_paths/new"}>
+                <Button>Create Career Path</Button>
+              </Link>
+            </ListGroup.Item>
             {props.careerPaths.map(careerPath => {
               const title = careerPath.title;
               const id = careerPath.id;
               return (
-                <Col>
-                  <ListGroup.Item key={id} variant="light">
-                    <Link to={`/career_paths/${id}`}>{title}</Link>
-                  </ListGroup.Item>
-                </Col>
+                <ListGroup.Item key={id}>
+                  <Link to={`/career_paths/${id}`}>{title}</Link>
+                </ListGroup.Item>
               );
             })}
           </ListGroup>
@@ -28,6 +33,7 @@ const CareerPaths = props => {
         <Col md="8">
           <Switch>
             <Route exact path="/career_paths" component={LearningPathGuide} />
+            <Route exact path="/career_paths/new" component={CareerPathForm} />
             {props.careerPaths.map(careerPath => {
               return (
                 <Route

@@ -57,6 +57,10 @@
   border-top: none !important;
 }
 
+.list-group-item {
+  border: none !important;
+}
+
 .list-group-item a {
   color: #ff9900;
 }
