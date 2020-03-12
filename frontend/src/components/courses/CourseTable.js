@@ -16,7 +16,9 @@ const Courses = props => {
             return (
               <tr>
                 <td>
-                  <a href={course.url}>{course.title}</a>
+                  <a href={course.url} target="_blank">
+                    {course.title}
+                  </a>
                 </td>
                 <td>
                   {course.length} min

@@ -11,7 +11,6 @@ const CareerPaths = props => {
     <div>
       <Row>
         <Col>
-          <p>Career Paths component</p>
           <ListGroup>
             {props.careerPaths.map(careerPath => {
               const title = careerPath.title;
@@ -26,7 +25,7 @@ const CareerPaths = props => {
             })}
           </ListGroup>
         </Col>
-        <Col md="9">
+        <Col md="8">
           <Switch>
             <Route exact path="/career_paths" component={LearningPathGuide} />
             {props.careerPaths.map(careerPath => {
