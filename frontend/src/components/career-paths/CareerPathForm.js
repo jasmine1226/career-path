@@ -16,9 +16,17 @@ class CareerPathForm extends Component {
     });
   };
 
+  handleOnSubmit = event => {
+    event.preventDefault();
+    this.props.createCareerPath({ title: this.state.title });
+    this.setState({
+      title: ""
+    });
+  };
+
   render() {
     return (
-      <Form>
+      <Form onSubmit={event => this.handleOnSubmit(event)}>
         <h4>Create a new Career Path</h4>
         <Form.Group as={Row}>
           <Col md={2}>

@@ -22,7 +22,12 @@ class CourseForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.createCourse(this.state.course);
+    const course = {
+      title: this.state.title,
+      url: this.state.url,
+      length: this.state.length
+    };
+    this.props.createCourse(course);
     this.setState({
       title: "",
       url: "",

@@ -18,6 +18,7 @@ const addCourse = course => {
 };
 
 export const createCourse = course => {
+  console.log("createCourse action called");
   return dispatch => {
     dispatch({ type: "START_CREATE_COURSE_REQUEST" });
     return fetch("http://localhost:3000/api/v1/courses", {

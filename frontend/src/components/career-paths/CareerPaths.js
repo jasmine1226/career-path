@@ -16,7 +16,7 @@ const CareerPaths = props => {
           <ListGroup>
             <ListGroup.Item>
               <Link to={"/career_paths/new"}>
-                <Button>Create Career Path</Button>
+                <Button>Add a Career Path</Button>
               </Link>
             </ListGroup.Item>
             {props.careerPaths.map(careerPath => {
@@ -33,7 +33,13 @@ const CareerPaths = props => {
         <Col md="8">
           <Switch>
             <Route exact path="/career_paths" component={LearningPathGuide} />
-            <Route exact path="/career_paths/new" component={CareerPathForm} />
+            <Route
+              exact
+              path="/career_paths/new"
+              component={() => (
+                <CareerPathForm createCareerPath={props.createCareerPath} />
+              )}
+            />
             {props.careerPaths.map(careerPath => {
               return (
                 <Route

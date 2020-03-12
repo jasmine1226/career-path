@@ -14,3 +14,27 @@ export function fetchCareerPaths() {
       .catch(error => console.log(error));
   };
 }
+
+const addCareerPath = careerPath => {
+  return {
+    type: "ADD_CAREER_PATH",
+    careerPath
+  };
+};
+
+export const createCareerPath = careerPath => {
+  return dispatch => {
+    return fetch("http://localhost:3000/api/v1/career_paths", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(careerPath)
+    })
+      .then(res => res.json())
+      .then(careerPath => {
+        dispatch(addCareerPath(careerPath));
+      })
+      .catch(error => console.log(error));
+  };
+};

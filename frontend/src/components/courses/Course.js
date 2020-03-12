@@ -16,7 +16,12 @@ const Course = props => {
           {course.length} minute
           {course.length === 1 ? null : "s"}
         </Card.Text>
-        <Button href={course.url} target="_blank" variant="primary">
+        <Button
+          href={course.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="primary"
+        >
           View
         </Button>
       </Card.Footer>

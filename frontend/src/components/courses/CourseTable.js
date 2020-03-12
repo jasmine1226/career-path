@@ -16,7 +16,11 @@ const Courses = props => {
             return (
               <tr>
                 <td>
-                  <a href={course.url} target="_blank">
+                  <a
+                    href={course.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {course.title}
                   </a>
                 </td>
