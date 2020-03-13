@@ -44,7 +44,6 @@ const CareerPaths = props => {
               return (
                 <Route
                   path={`/career_paths/${careerPath.id}`}
-                  exact={true}
                   component={() => <CareerPath careerPath={careerPath} />}
                 />
               );

@@ -1,5 +1,6 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
 
 const Courses = props => {
   return (
@@ -9,6 +10,7 @@ const Courses = props => {
           <tr>
             <th>Title</th>
             <th>Length</th>
+            {!props.editing ? null : <th>Delete</th>}
           </tr>
         </thead>
         <tbody>
@@ -28,6 +30,11 @@ const Courses = props => {
                   {course.length} min
                   {course.length === 1 ? null : "s"}
                 </td>
+                {!props.editing ? null : (
+                  <td>
+                    <Button variant="primary">Delete</Button>
+                  </td>
+                )}
               </tr>
             );
           })}
