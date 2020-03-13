@@ -5,6 +5,12 @@ import { Route, Link, withRouter } from "react-router-dom";
 import EditCareerPath from "./EditCareerPath";
 
 class CareerPath extends Component {
+  handleDelete = event => {
+    event.preventDefault();
+    this.props.deleteCareerPath(event.target.id);
+    this.props.history.push("/career_paths");
+  };
+
   render() {
     return (
       <>
@@ -38,7 +44,14 @@ class CareerPath extends Component {
               />
               <Button
                 variant="primary"
-                style={{ marginBottom: 1 + "em" }}
+                style={{ marginRight: 1 + "em" }}
+                id={this.props.careerPath.id}
+                onClick={event => this.handleDelete(event)}
+              >
+                Delete Career Path
+              </Button>
+              <Button
+                variant="primary"
                 onClick={() => this.props.history.goBack()}
               >
                 Done

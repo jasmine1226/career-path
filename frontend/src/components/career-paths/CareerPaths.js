@@ -44,7 +44,12 @@ const CareerPaths = props => {
               return (
                 <Route
                   path={`/career_paths/${careerPath.id}`}
-                  component={() => <CareerPath careerPath={careerPath} />}
+                  component={() => (
+                    <CareerPath
+                      careerPath={careerPath}
+                      deleteCareerPath={props.deleteCareerPath}
+                    />
+                  )}
                 />
               );
             })}

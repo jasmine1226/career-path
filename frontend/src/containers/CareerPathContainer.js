@@ -3,7 +3,8 @@ import CareerPaths from "../components/career-paths/CareerPaths";
 import { connect } from "react-redux";
 import {
   fetchCareerPaths,
-  createCareerPath
+  createCareerPath,
+  deleteCareerPath
 } from "../actions/careerPathActions";
 
 class CareerPathContainer extends Component {
@@ -17,6 +18,7 @@ class CareerPathContainer extends Component {
         <CareerPaths
           careerPaths={this.props.careerPaths}
           createCareerPath={this.props.createCareerPath}
+          deleteCareerPath={this.props.deleteCareerPath}
         />
       </div>
     );
@@ -30,7 +32,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
   return {
     fetchCareerPaths: () => dispatch(fetchCareerPaths()),
-    createCareerPath: careerPath => dispatch(createCareerPath(careerPath))
+    createCareerPath: careerPath => dispatch(createCareerPath(careerPath)),
+    deleteCareerPath: id => dispatch(deleteCareerPath(id))
   };
 };
 

@@ -38,3 +38,16 @@ export const createCareerPath = careerPath => {
       .catch(error => console.log(error));
   };
 };
+
+export const deleteCareerPath = id => {
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/career_paths/${id}`, {
+      method: "DELETE"
+    })
+      .then(res => res.json())
+      .then(id => {
+        dispatch(deleteCareerPath(id));
+      })
+      .catch(error => console.log(error));
+  };
+};
