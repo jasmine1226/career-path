@@ -1,9 +1,14 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
 const Courses = props => {
-  return (
+  return props.courses.length === 0 ? (
+    <Alert variant="secondary">
+      There are no courses in this career path yet.
+    </Alert>
+  ) : (
     <div>
       <Table striped bordered hover>
         <thead>

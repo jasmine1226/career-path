@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import { withRouter } from "react-router-dom";
 
 class CareerPathForm extends Component {
   state = {
@@ -22,6 +23,7 @@ class CareerPathForm extends Component {
     this.setState({
       title: ""
     });
+    this.props.history.push("/career_paths");
   };
 
   render() {
@@ -49,4 +51,4 @@ class CareerPathForm extends Component {
   }
 }
 
-export default CareerPathForm;
+export default withRouter(CareerPathForm);

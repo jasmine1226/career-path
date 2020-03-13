@@ -12,48 +12,39 @@ class CareerPath extends Component {
   };
 
   render() {
+    const { careerPath, location, history } = this.props;
     return (
       <>
-        <h4>Career Path for {this.props.careerPath.title}s</h4>
-        {this.props.location.pathname ===
-        `/career_paths/${this.props.careerPath.id}/edit` ? null : (
-          <Link to={`/career_paths/${this.props.careerPath.id}/edit`}>
+        <h4>Career Path for {careerPath.title}s</h4>
+        {location.pathname === `/career_paths/${careerPath.id}/edit` ? null : (
+          <Link to={`/career_paths/${careerPath.id}/edit`}>
             <Button variant="primary" style={{ marginBottom: 1 + "em" }}>
               Edit
             </Button>
           </Link>
         )}
         <Route
-          path={`/career_paths/${this.props.careerPath.id}`}
+          path={`/career_paths/${careerPath.id}`}
           exact={true}
           component={() => (
-            <CourseTable
-              courses={this.props.careerPath.courses}
-              editing={false}
-            />
+            <CourseTable courses={careerPath.courses} editing={false} />
           )}
         />
         <Route
-          path={`/career_paths/${this.props.careerPath.id}/edit`}
+          path={`/career_paths/${careerPath.id}/edit`}
           exact={true}
           component={() => (
             <>
-              <CourseTable
-                courses={this.props.careerPath.courses}
-                editing={true}
-              />
+              <CourseTable courses={careerPath.courses} editing={true} />
               <Button
                 variant="primary"
                 style={{ marginRight: 1 + "em" }}
-                id={this.props.careerPath.id}
+                id={careerPath.id}
                 onClick={event => this.handleDelete(event)}
               >
                 Delete Career Path
               </Button>
-              <Button
-                variant="primary"
-                onClick={() => this.props.history.goBack()}
-              >
+              <Button variant="primary" onClick={() => history.goBack()}>
                 Done
               </Button>
             </>
