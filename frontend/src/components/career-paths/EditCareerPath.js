@@ -38,11 +38,9 @@ class EditCareerPath extends Component {
                 as="select"
                 onChange={event => this.handleOnChange(event)}
               >
-                <option value="1">Course 1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                {this.props.courses.map(course => (
+                  <option value={course.id}>{course.title}</option>
+                ))}
               </Form.Control>
             </Col>
             <Button

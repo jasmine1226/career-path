@@ -17,6 +17,7 @@ class CareerPathContainer extends Component {
       <div>
         <CareerPaths
           careerPaths={this.props.careerPaths}
+          courses={this.props.courses}
           createCareerPath={this.props.createCareerPath}
           deleteCareerPath={this.props.deleteCareerPath}
         />
@@ -26,7 +27,8 @@ class CareerPathContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  careerPaths: state.careerPaths
+  careerPaths: state.careerPaths,
+  courses: state.courses
 });
 
 const mapDispatchToProps = dispatch => {

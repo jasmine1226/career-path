@@ -9,6 +9,8 @@ import LearningPathGuide from "./LearningPathGuide";
 import CareerPathForm from "./CareerPathForm";
 
 const CareerPaths = props => {
+  console.log("CareerPaths: ");
+  console.log(props.courses);
   return (
     <div>
       <Row>
@@ -47,6 +49,7 @@ const CareerPaths = props => {
                   component={() => (
                     <CareerPath
                       careerPath={careerPath}
+                      courses={props.courses}
                       deleteCareerPath={props.deleteCareerPath}
                     />
                   )}

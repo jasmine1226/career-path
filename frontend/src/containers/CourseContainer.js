@@ -1,22 +1,45 @@
 import React, { Component } from "react";
 import Courses from "../components/courses/Courses";
-import CourseForm from "../components/courses/CourseForm";
 import { connect } from "react-redux";
-import { createCourse } from "../actions/courseActions";
+import { fetchCourses, createCourse } from "../actions/courseActions";
+import { Route } from "react-router-dom";
+import CareerPathContainer from "./CareerPathContainer";
+import Home from "../components/Home";
 
 class CourseContainer extends Component {
+  componentDidMount() {
+    this.props.fetchCourses();
+  }
+
   render() {
     return (
-      <div>
-        <CourseForm createCourse={this.props.createCourse} />
-        <Courses courses={this.props.courses} />
-      </div>
+      <>
+        <Route
+          exact
+          path="/"
+          component={() => <Home courses={this.props.courses} />}
+        />
+        <Route path="/career_paths" component={CareerPathContainer} />
+        <Route
+          exact
+          path="/courses"
+          component={() => (
+            <Courses
+              courses={this.props.courses}
+              createCourse={this.props.createCourse}
+            />
+          )}
+        />
+      </>
     );
   }
 }
 
+const mapStateToProps = state => ({ courses: state.courses });
+
 const mapDispatchToProps = dispatch => ({
-  createCourse: course => dispatch(createCourse(course))
+  createCourse: course => dispatch(createCourse(course)),
+  fetchCourses: () => dispatch(fetchCourses())
 });
 
-export default connect(null, mapDispatchToProps)(CourseContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CourseContainer);
