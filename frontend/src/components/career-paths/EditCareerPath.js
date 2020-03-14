@@ -10,11 +10,9 @@ class EditCareerPath extends Component {
   };
 
   handleOnChange = event => {
-    console.log(event.target.value);
-    // const { id, value } = event.target;
-    // this.setState({
-    //   [id]: value
-    // });
+    this.setState({
+      courseId: event.target.value
+    });
   };
 
   handleOnSubmit = event => {
@@ -26,6 +24,12 @@ class EditCareerPath extends Component {
   };
 
   render() {
+    // only display courses that are not in the career path already
+    const courseList = this.props.courses.filter(course => {
+      if (!this.props.careerPath.courses.find(c => c.title === course.title)) {
+        return course;
+      }
+    });
     return (
       <>
         <Form onSubmit={event => this.handleOnSubmit(event)}>
@@ -38,7 +42,7 @@ class EditCareerPath extends Component {
                 as="select"
                 onChange={event => this.handleOnChange(event)}
               >
-                {this.props.courses.map(course => (
+                {courseList.map(course => (
                   <option value={course.id}>{course.title}</option>
                 ))}
               </Form.Control>

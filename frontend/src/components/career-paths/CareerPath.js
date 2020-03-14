@@ -12,8 +12,6 @@ class CareerPath extends Component {
   };
 
   render() {
-    console.log("CareerPath: ");
-    console.log(this.props.courses);
     const { careerPath, courses, location, history } = this.props;
     return (
       <>
@@ -37,7 +35,7 @@ class CareerPath extends Component {
           exact={true}
           component={() => (
             <>
-              <EditCareerPath courses={courses} />
+              <EditCareerPath careerPath={careerPath} courses={courses} />
               <CourseTable courses={careerPath.courses} editing={true} />
               <Button
                 variant="primary"

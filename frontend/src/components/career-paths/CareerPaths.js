@@ -9,8 +9,6 @@ import LearningPathGuide from "./LearningPathGuide";
 import CareerPathForm from "./CareerPathForm";
 
 const CareerPaths = props => {
-  console.log("CareerPaths: ");
-  console.log(props.courses);
   return (
     <div>
       <Row>
