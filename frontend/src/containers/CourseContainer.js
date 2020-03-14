@@ -2,13 +2,9 @@ import React, { Component } from "react";
 import Courses from "../components/courses/Courses";
 import CourseForm from "../components/courses/CourseForm";
 import { connect } from "react-redux";
-import { fetchCourses, createCourse } from "../actions/courseActions";
+import { createCourse } from "../actions/courseActions";
 
 class CourseContainer extends Component {
-  componentDidMount() {
-    this.props.fetchCourses();
-  }
-
   render() {
     return (
       <div>
@@ -19,11 +15,8 @@ class CourseContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({ courses: state.courses });
-
 const mapDispatchToProps = dispatch => ({
-  fetchCourses: () => dispatch(fetchCourses()),
   createCourse: course => dispatch(createCourse(course))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CourseContainer);
+export default connect(null, mapDispatchToProps)(CourseContainer);

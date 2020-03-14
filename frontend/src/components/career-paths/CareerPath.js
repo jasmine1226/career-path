@@ -35,6 +35,7 @@ class CareerPath extends Component {
           exact={true}
           component={() => (
             <>
+              <EditCareerPath />
               <CourseTable courses={careerPath.courses} editing={true} />
               <Button
                 variant="primary"

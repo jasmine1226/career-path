@@ -6,21 +6,22 @@ import Row from "react-bootstrap/Row";
 
 class EditCareerPath extends Component {
   state = {
-    title: ""
+    courseId: null
   };
 
   handleOnChange = event => {
-    const { id, value } = event.target;
-    this.setState({
-      [id]: value
-    });
+    console.log(event.target.value);
+    // const { id, value } = event.target;
+    // this.setState({
+    //   [id]: value
+    // });
   };
 
   handleOnSubmit = event => {
     event.preventDefault();
     //this.props.createCareerPath({ title: this.state.title });
     this.setState({
-      title: ""
+      courseId: null
     });
   };
 
@@ -28,23 +29,30 @@ class EditCareerPath extends Component {
     return (
       <>
         <Form onSubmit={event => this.handleOnSubmit(event)}>
-          <h4>Edit Career Path</h4>
           <Form.Group as={Row}>
             <Col md={2}>
-              <Form.Label>Job Title</Form.Label>
+              <Form.Label>Add a course</Form.Label>
             </Col>
             <Col>
               <Form.Control
-                type="text"
-                id="title"
-                value={this.state.title}
+                as="select"
                 onChange={event => this.handleOnChange(event)}
-              />
+              >
+                <option value="1">Course 1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </Form.Control>
             </Col>
+            <Button
+              variant="primary"
+              type="submit"
+              style={{ marginBottom: 1 + "em" }}
+            >
+              Add
+            </Button>
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
         </Form>
       </>
     );
