@@ -22,16 +22,20 @@ module Api::V1
       @career_path = CareerPath.new(career_path_params)
 
       if @career_path.save
-        render json: @career_path, status: :created
+        render json: @career_path.to_json(:include => {
+          :courses => {:only => [:title, :url, :length]}}), status: :created
       else
         render json: @career_path.errors, status: :unprocessable_entity
       end
     end
 
-    # PATCH/PUT /career_paths/1
+    # PATCH/PUT /career_paths/1/course_id
     def update
-      if @career_path.update(career_path_params)
-        render json: @career_path
+      if params[:course_id]
+        course = Course.find(params[:course_id])
+        @career_path.courses.push(course)
+        render json: @career_path.to_json(:include => {
+          :courses => {:only => [:title, :url, :length]}})
       else
         render json: @career_path.errors, status: :unprocessable_entity
       end
@@ -50,7 +54,7 @@ module Api::V1
 
       # Only allow a trusted parameter "white list" through.
       def career_path_params
-        params.require(:career_path).permit(:title)
+        params.require(:career_path).permit(:id, :title, :created_at, :updated_at, :course_id)
       end
   end
 end

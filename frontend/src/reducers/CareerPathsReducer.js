@@ -83,10 +83,25 @@ const CareerPathsReducer = (
       };
     // delete career path
     case "DELETE_CAREER_PATH":
-      const careerPaths = state.careerPaths.filter(
+      let careerPaths = state.careerPaths.filter(
         careerPath => careerPath.id !== action.id
       );
       return { ...state, careerPaths: careerPaths };
+    // update career path
+    case "EDIT_CAREER_PATH":
+      let editedCareerPaths = state.careerPaths.map(careerPath => {
+        if (careerPath.id === action.careerPath.id) {
+          return action.careerPath;
+        } else {
+          return careerPath;
+        }
+      });
+      return {
+        ...state,
+        careerPaths: editedCareerPaths,
+        courses: [...state.courses],
+        loading: false
+      };
     default:
       return state;
   }

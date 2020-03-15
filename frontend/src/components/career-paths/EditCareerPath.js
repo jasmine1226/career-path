@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 
 class EditCareerPath extends Component {
   state = {
+    careerPath: this.props.careerPath,
     courseId: null
   };
 
@@ -17,7 +18,9 @@ class EditCareerPath extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    //this.props.createCareerPath({ title: this.state.title });
+    console.log(this.state.courseId);
+    console.log(this.props.careerPath.courses);
+    this.props.editCareerPath(this.props.careerPath, this.state.courseId);
     this.setState({
       courseId: null
     });
@@ -56,6 +59,7 @@ class EditCareerPath extends Component {
             </Button>
           </Form.Group>
         </Form>
+        {this.state.courseId}
       </>
     );
   }

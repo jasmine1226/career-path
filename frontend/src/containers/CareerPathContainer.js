@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import {
   fetchCareerPaths,
   createCareerPath,
-  deleteCareerPath
+  deleteCareerPath,
+  editCareerPath
 } from "../actions/careerPathActions";
 
 class CareerPathContainer extends Component {
@@ -20,6 +21,7 @@ class CareerPathContainer extends Component {
           courses={this.props.courses}
           createCareerPath={this.props.createCareerPath}
           deleteCareerPath={this.props.deleteCareerPath}
+          editCareerPath={this.props.editCareerPath}
         />
       </div>
     );
@@ -35,7 +37,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchCareerPaths: () => dispatch(fetchCareerPaths()),
     createCareerPath: careerPath => dispatch(createCareerPath(careerPath)),
-    deleteCareerPath: id => dispatch(deleteCareerPath(id))
+    deleteCareerPath: id => dispatch(deleteCareerPath(id)),
+    editCareerPath: (careerPath, courseId) =>
+      dispatch(editCareerPath(careerPath, courseId))
   };
 };
 

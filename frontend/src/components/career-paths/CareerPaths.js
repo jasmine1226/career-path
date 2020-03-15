@@ -49,6 +49,7 @@ const CareerPaths = props => {
                       careerPath={careerPath}
                       courses={props.courses}
                       deleteCareerPath={props.deleteCareerPath}
+                      editCareerPath={props.editCareerPath}
                     />
                   )}
                 />

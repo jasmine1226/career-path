@@ -49,3 +49,20 @@ export const deleteCareerPath = id => {
       .catch(error => console.log(error));
   };
 };
+
+export const editCareerPath = (careerPath, courseId) => {
+  return dispatch => {
+    console.log("dispatching editCareerPath - before fetch");
+    return fetch(
+      `http://localhost:3000/api/v1/career_paths/${careerPath.id}/${courseId}`,
+      {
+        method: "PATCH"
+      }
+    )
+      .then(res => res.json())
+      .then(careerPath => {
+        dispatch({ type: "EDIT_CAREER_PATH", careerPath });
+      })
+      .catch(error => console.log(error));
+  };
+};
