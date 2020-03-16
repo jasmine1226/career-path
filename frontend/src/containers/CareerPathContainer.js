@@ -16,13 +16,15 @@ class CareerPathContainer extends Component {
   render() {
     return (
       <div>
-        <CareerPaths
-          careerPaths={this.props.careerPaths}
-          courses={this.props.courses}
-          createCareerPath={this.props.createCareerPath}
-          deleteCareerPath={this.props.deleteCareerPath}
-          editCareerPath={this.props.editCareerPath}
-        />
+        {this.props.careerPaths === [] ? null : (
+          <CareerPaths
+            careerPaths={this.props.careerPaths}
+            courses={this.props.courses}
+            createCareerPath={this.props.createCareerPath}
+            deleteCareerPath={this.props.deleteCareerPath}
+            editCareerPath={this.props.editCareerPath}
+          />
+        )}
       </div>
     );
   }

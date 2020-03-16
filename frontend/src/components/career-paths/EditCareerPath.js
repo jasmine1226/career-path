@@ -45,6 +45,10 @@ class EditCareerPath extends Component {
                 as="select"
                 onChange={event => this.handleOnChange(event)}
               >
+                <option disabled selected value>
+                  {" "}
+                  -- select a course --{" "}
+                </option>
                 {courseList.map(course => (
                   <option value={course.id}>{course.title}</option>
                 ))}
