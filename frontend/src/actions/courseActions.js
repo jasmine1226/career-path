@@ -18,7 +18,6 @@ const addCourse = course => {
 };
 
 export const createCourse = course => {
-  console.log("createCourse action called");
   return dispatch => {
     dispatch({ type: "START_CREATE_COURSE_REQUEST" });
     return fetch("http://localhost:3000/api/v1/courses", {
@@ -31,6 +30,19 @@ export const createCourse = course => {
       .then(res => res.json())
       .then(course => {
         dispatch(addCourse(course));
+      })
+      .catch(error => console.log(error));
+  };
+};
+
+export const deleteCourse = id => {
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/courses/${id}`, {
+      method: "DELETE"
+    })
+      .then(res => res.json())
+      .then(id => {
+        dispatch(deleteCourse(id));
       })
       .catch(error => console.log(error));
   };

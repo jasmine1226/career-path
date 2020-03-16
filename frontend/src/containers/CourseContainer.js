@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import Courses from "../components/courses/Courses";
 import { connect } from "react-redux";
-import { fetchCourses, createCourse } from "../actions/courseActions";
+import {
+  fetchCourses,
+  createCourse,
+  deleteCourse
+} from "../actions/courseActions";
 import { Route } from "react-router-dom";
 import CareerPathContainer from "./CareerPathContainer";
 import Home from "../components/Home";
@@ -27,6 +31,7 @@ class CourseContainer extends Component {
             <Courses
               courses={this.props.courses}
               createCourse={this.props.createCourse}
+              deleteCourse={this.props.deleteCourse}
             />
           )}
         />
@@ -39,7 +44,8 @@ const mapStateToProps = state => ({ courses: state.courses });
 
 const mapDispatchToProps = dispatch => ({
   createCourse: course => dispatch(createCourse(course)),
-  fetchCourses: () => dispatch(fetchCourses())
+  fetchCourses: () => dispatch(fetchCourses()),
+  deleteCourse: id => dispatch(deleteCourse(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CourseContainer);

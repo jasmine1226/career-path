@@ -5,6 +5,11 @@ import Button from "react-bootstrap/Button";
 
 const Course = props => {
   const course = props.course;
+
+  const handleDelete = event => {
+    props.deleteCourse(event.target.id);
+  };
+
   return (
     <Card style={{ flex: 1 }}>
       <Card.Img variant="top" src="https://placeimg.com/286/180/tech" />
@@ -18,11 +23,19 @@ const Course = props => {
         </Card.Text>
         <Button
           href={course.url}
+          style={{ marginRight: 1 + "em" }}
           target="_blank"
           rel="noopener noreferrer"
           variant="primary"
         >
           View
+        </Button>
+        <Button
+          onClick={event => handleDelete(event)}
+          id={course.id}
+          variant="primary"
+        >
+          Delete
         </Button>
       </Card.Footer>
     </Card>

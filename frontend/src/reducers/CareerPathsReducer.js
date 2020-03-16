@@ -98,10 +98,12 @@ const CareerPathsReducer = (
       });
       return {
         ...state,
-        careerPaths: editedCareerPaths,
-        courses: [...state.courses],
-        loading: false
+        careerPaths: editedCareerPaths
       };
+    // delete course
+    case "DELETE_COURSE":
+      let courses = state.courses.filter(course => course.id !== action.id);
+      return { ...state, courses: courses };
     default:
       return state;
   }

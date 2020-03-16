@@ -9,7 +9,13 @@ const Courses = props => (
     <CardDeck style={{ display: "flex", flexDirection: "row" }}>
       <div class="row justify-content-center">
         {props.courses.map(course => {
-          return <Course key={course.id} course={course} />;
+          return (
+            <Course
+              key={course.id}
+              course={course}
+              deleteCourse={props.deleteCourse}
+            />
+          );
         })}
       </div>
     </CardDeck>
