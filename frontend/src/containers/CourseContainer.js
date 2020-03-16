@@ -21,7 +21,14 @@ class CourseContainer extends Component {
         <Route
           exact
           path="/"
-          component={() => <Home courses={this.props.courses} />}
+          component={() => (
+            // pick 3 random courses to highlight
+            <Home
+              courses={this.props.courses
+                .sort(() => 0.5 - Math.random())
+                .slice(0, 3)}
+            />
+          )}
         />
         <Route path="/career_paths" component={CareerPathContainer} />
         <Route
