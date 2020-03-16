@@ -59,7 +59,6 @@ class EditCareerPath extends Component {
             </Button>
           </Form.Group>
         </Form>
-        {this.state.courseId}
       </>
     );
   }
