@@ -30,7 +30,7 @@ const CareerPaths = props => {
             })}
           </ListGroup>
         </Col>
-        <Col md="8">
+        <Col md="9">
           <Switch>
             <Route exact path="/career_paths" component={LearningPathGuide} />
             <Route
