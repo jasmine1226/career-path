@@ -26,9 +26,7 @@ const App = () => {
           Courses
         </Nav.Link>
       </Navbar>
-      <Container>
-        <Col id="active-user-display">Welcome back, User</Col>
-
+      <Container style={{ marginTop: 2 + "em" }}>
         <CourseContainer />
       </Container>
     </div>
