@@ -34,16 +34,3 @@ export const createCourse = course => {
       .catch(error => console.log(error));
   };
 };
-
-export const deleteCourse = id => {
-  return dispatch => {
-    return fetch(`http://localhost:3000/api/v1/courses/${id}`, {
-      method: "DELETE"
-    })
-      .then(res => res.json())
-      .then(id => {
-        dispatch(deleteCourse(id));
-      })
-      .catch(error => console.log(error));
-  };
-};

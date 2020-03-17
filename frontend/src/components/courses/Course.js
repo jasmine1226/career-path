@@ -7,7 +7,12 @@ const Course = props => {
   const course = props.course;
 
   const handleDelete = event => {
-    props.deleteCourse(event.target.id);
+    fetch(`http://localhost:3000/api/v1/courses/${event.target.id}`, {
+      method: "DELETE"
+    }).then(res => {
+      alert("The course has been deleted.");
+      props.fetchCourses();
+    });
   };
 
   return (

@@ -37,22 +37,8 @@ export const createCareerPath = careerPath => {
   };
 };
 
-export const deleteCareerPath = id => {
-  return dispatch => {
-    return fetch(`http://localhost:3000/api/v1/career_paths/${id}`, {
-      method: "DELETE"
-    })
-      .then(res => res.json())
-      .then(id => {
-        dispatch(deleteCareerPath(id));
-      })
-      .catch(error => console.log(error));
-  };
-};
-
 export const editCareerPath = (careerPath, courseId) => {
   return dispatch => {
-    console.log("dispatching editCareerPath - before fetch");
     return fetch(
       `http://localhost:3000/api/v1/career_paths/${careerPath.id}/${courseId}`,
       {

@@ -35,7 +35,7 @@ module Api::V1
         course = Course.find(params[:course_id])
         @career_path.courses.push(course)
         render json: @career_path.to_json(:include => {
-          :courses => {:only => [:title, :url, :length]}})
+          :courses => {:only => [:title, :url, :length]}}), status: 200
       else
         render json: @career_path.errors, status: :unprocessable_entity
       end

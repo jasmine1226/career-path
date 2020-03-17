@@ -81,12 +81,6 @@ const CareerPathsReducer = (
         courses: [...state.courses],
         loading: false
       };
-    // delete career path
-    case "DELETE_CAREER_PATH":
-      let careerPaths = state.careerPaths.filter(
-        careerPath => careerPath.id !== action.id
-      );
-      return { ...state, careerPaths: careerPaths };
     // update career path
     case "EDIT_CAREER_PATH":
       let editedCareerPaths = state.careerPaths.map(careerPath => {
@@ -100,10 +94,6 @@ const CareerPathsReducer = (
         ...state,
         careerPaths: editedCareerPaths
       };
-    // delete course
-    case "DELETE_COURSE":
-      let courses = state.courses.filter(course => course.id !== action.id);
-      return { ...state, courses: courses };
     default:
       return state;
   }

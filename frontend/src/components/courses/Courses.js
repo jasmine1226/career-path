@@ -14,7 +14,7 @@ const Courses = props => (
               <Course
                 key={course.id}
                 course={course}
-                deleteCourse={props.deleteCourse}
+                fetchCourses={props.fetchCourses}
               />
             );
           })}

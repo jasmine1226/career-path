@@ -48,7 +48,7 @@ const CareerPaths = props => {
                     <CareerPath
                       careerPath={careerPath}
                       courses={props.courses}
-                      deleteCareerPath={props.deleteCareerPath}
+                      fetchCareerPaths={props.fetchCareerPaths}
                       editCareerPath={props.editCareerPath}
                     />
                   )}

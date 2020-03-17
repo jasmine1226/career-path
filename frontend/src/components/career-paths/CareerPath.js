@@ -6,9 +6,12 @@ import EditCareerPath from "./EditCareerPath";
 
 class CareerPath extends Component {
   handleDelete = event => {
-    event.preventDefault();
-    this.props.deleteCareerPath(event.target.id);
-    this.props.history.push("/career_paths");
+    fetch(`http://localhost:3000/api/v1/career_paths/${event.target.id}`, {
+      method: "DELETE"
+    }).then(res => {
+      alert("The career path has been deleted.");
+      this.props.fetchCareerPaths();
+    });
   };
 
   render() {
