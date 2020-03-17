@@ -15,7 +15,13 @@ class CareerPath extends Component {
   };
 
   render() {
-    const { careerPath, courses, location, history } = this.props;
+    const {
+      careerPath,
+      courses,
+      location,
+      history,
+      fetchCareerPaths
+    } = this.props;
     return (
       <>
         <h4>Career Path for {careerPath.title}s</h4>
@@ -30,7 +36,11 @@ class CareerPath extends Component {
           path={`/career_paths/${careerPath.id}`}
           exact={true}
           component={() => (
-            <CourseTable courses={careerPath.courses} editing={false} />
+            <CourseTable
+              courses={careerPath.courses}
+              careerPathId={careerPath.id}
+              editing={false}
+            />
           )}
         />
         <Route
@@ -43,7 +53,12 @@ class CareerPath extends Component {
                 courses={courses}
                 editCareerPath={this.props.editCareerPath}
               />
-              <CourseTable courses={careerPath.courses} editing={true} />
+              <CourseTable
+                courses={careerPath.courses}
+                careerPathId={careerPath.id}
+                fetchCareerPaths={fetchCareerPaths}
+                editing={true}
+              />
               <Button
                 variant="primary"
                 style={{ marginRight: 1 + "em" }}

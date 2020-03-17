@@ -40,7 +40,7 @@ export const createCareerPath = careerPath => {
 export const editCareerPath = (careerPath, courseId) => {
   return dispatch => {
     return fetch(
-      `http://localhost:3000/api/v1/career_paths/${careerPath.id}/${courseId}`,
+      `http://localhost:3000/api/v1/career_paths/${careerPath.id}/courses/${courseId}`,
       {
         method: "PATCH"
       }
