@@ -2,9 +2,7 @@ export function fetchCareerPaths() {
   return dispatch => {
     dispatch({ type: "START_ADDING_CAREER_PATHS_REQUEST" });
     fetch("http://localhost:3000/api/v1/career_paths")
-      .then(response => {
-        return response.json();
-      })
+      .then(response => response.json())
       .then(careerPaths => {
         return dispatch({
           type: "ADD_CAREER_PATHS",
@@ -39,14 +37,17 @@ export const createCareerPath = careerPath => {
   };
 };
 
-export const deleteCareerPath = id => {
+export const editCareerPath = (careerPath, courseId) => {
   return dispatch => {
-    return fetch(`http://localhost:3000/api/v1/career_paths/${id}`, {
-      method: "DELETE"
-    })
+    return fetch(
+      `http://localhost:3000/api/v1/career_paths/${careerPath.id}/courses/${courseId}`,
+      {
+        method: "PATCH"
+      }
+    )
       .then(res => res.json())
-      .then(id => {
-        dispatch(deleteCareerPath(id));
+      .then(careerPath => {
+        dispatch({ type: "EDIT_CAREER_PATH", careerPath });
       })
       .catch(error => console.log(error));
   };

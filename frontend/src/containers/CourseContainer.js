@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Courses from "../components/courses/Courses";
-import CourseForm from "../components/courses/CourseForm";
 import { connect } from "react-redux";
 import { fetchCourses, createCourse } from "../actions/courseActions";
+import { Route } from "react-router-dom";
+import CareerPathContainer from "./CareerPathContainer";
+import Home from "../components/Home";
 
 class CourseContainer extends Component {
   componentDidMount() {
@@ -11,10 +13,33 @@ class CourseContainer extends Component {
 
   render() {
     return (
-      <div>
-        <CourseForm createCourse={this.props.createCourse} />
-        <Courses courses={this.props.courses} />
-      </div>
+      <>
+        <Route
+          exact
+          path="/"
+          component={() => (
+            // pick 3 random courses to highlight
+            <Home
+              courses={this.props.courses
+                .sort(() => 0.5 - Math.random())
+                .slice(0, 3)}
+            />
+          )}
+        />
+        <Route path="/career_paths" component={CareerPathContainer} />
+
+        <Route
+          exact
+          path="/courses"
+          component={() => (
+            <Courses
+              courses={this.props.courses}
+              createCourse={this.props.createCourse}
+              fetchCourses={this.props.fetchCourses}
+            />
+          )}
+        />
+      </>
     );
   }
 }

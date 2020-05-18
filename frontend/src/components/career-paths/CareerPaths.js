@@ -30,7 +30,7 @@ const CareerPaths = props => {
             })}
           </ListGroup>
         </Col>
-        <Col md="8">
+        <Col md="9">
           <Switch>
             <Route exact path="/career_paths" component={LearningPathGuide} />
             <Route
@@ -47,7 +47,9 @@ const CareerPaths = props => {
                   component={() => (
                     <CareerPath
                       careerPath={careerPath}
-                      deleteCareerPath={props.deleteCareerPath}
+                      courses={props.courses}
+                      fetchCareerPaths={props.fetchCareerPaths}
+                      editCareerPath={props.editCareerPath}
                     />
                   )}
                 />
